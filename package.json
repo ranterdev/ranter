@@ -1,5 +1,5 @@
 {
-  "name": "my-t3-app",
+  "name": "ranter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,9 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -37,6 +39,9 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.47.0",
     "eslint-config-next": "^14.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.1",
@@ -44,8 +49,10 @@
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6"
   },
-  "ct3aMetadata": {
-    "initVersion": "7.23.2"
-  },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.ts": "eslint --cache --fix",
+    "*.": "prettier --write ."
+  }
 }
