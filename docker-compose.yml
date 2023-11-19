@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_CLIENTVAR: 'clientvar'
+    working_dir: /app
+    ports:
+      - '3000:3000'
+    image: dev-docker
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@host.docker.internal:5432/ranter
+    env_file:
+      - .env
