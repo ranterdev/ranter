@@ -34,7 +34,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@public/*": ["./public/*"],
       "@server/*": ["./server/*"],
-      "@config/*": ["./config/*"]
+      "@config/*": ["./config/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": [

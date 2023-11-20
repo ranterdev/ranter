@@ -1,14 +1,21 @@
 import { type Config } from 'tailwindcss'
-import { fontFamily } from 'tailwindcss/defaultTheme'
 
 export default {
   content: ['./src/**/*.tsx'],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['var(--font-sans)', ...fontFamily.sans]
-      }
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      primary: '#FF4C3C',
+      secondary: '#32E3AF',
+      purple: '#7F4EFF',
+      white: '#FFFFFF',
+      black: '#010109',
+      hover: '#5F5E5E'
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio')
+  ]
 } satisfies Config
