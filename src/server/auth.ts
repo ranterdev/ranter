@@ -8,8 +8,8 @@ import {
 import DiscordProvider from 'next-auth/providers/discord'
 import Auth0Provider from 'next-auth/providers/auth0'
 
-import { env } from '~/env.mjs'
-import { db } from '~/server/db'
+import { env } from '@/env.mjs'
+import { db } from '@/server/db'
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
